@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--
+        veiwport => Toda área visível na tela.
+        content="width=device-width" => O tamanho da tela será do tamanho do dispositivo.
+        initial-scale=1 => Zoom. Isso se adapta a cada tamanho de tela.
+        srink-to-fit=no => Encolher para caber. Quando o conteúdo ultrapasse o viewport, ele seja encolhido para caber. Colocamos não, pois vai ter elementos que eu quero mostrar ou não conforme a necessidade.
+    -->
+
+    <!-- Bootstrap CSS Carregado da internet -->
+    <!-- Dessa maneira não precisa baixar os arquivos css e quando mudar a versão do bootstrap é só alterar direto no link, substituindo, por exemplo o "bootstrap@4.1.3" pelo número da versão mais recente. -->
+    <!--
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    -->
+
+    <!-- Após carregar a página uma vez pelo link, não poderie mudar o href pois o atributo "integrity" e o crossorigin faz essa proteção.
+    Para que isso não ocorra, vou retirar esse dois atributos.-->
+
+
+
+    <!-- Bootstrap CSS Carregado Internamente -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <title>Bootstrap - Elementos flutuantes</title>
+
+    <style>
+        .titulo {
+            color: rgb(143, 2, 2);
+        }
+        
+        #menu {
+            margin: 2px;
+            height: 60px;
+        }
+        
+        #menu>ul li:hover {
+            background: rgb(170, 21, 21);
+        }
+    </style>
+</head>
+
+<body style="margin-bottom: 200px;padding:16px;">
+
+    <!-- Elementos Flutuantes -->
+    <h4 class="titulo" style="padding-top: 60px;">Elementos Flutuantes</h4>
+    <div style="border: 1px solid red;" class="clearfix">
+        <div class="bg-success float-left">Float Left</div>
+        <div class="bg-warning float-right">Float Right</div>
+    </div>
+    <!-- Float-left | Float-right | Float-none -->
+    <!-- Quando usamos elementos flutuante, a div geral fica sem altura definida.
+        Para isso, teremos que dar um clear: both;
+        Em Bootstrap isso é muito simples.
+        É só definiar a classe clearfix.
+     -->
+
+    <br>
+    <br>
+
+    <!-- Posicionamento fixo - top e bottom -->
+    <h4 class="titulo">Posicionamento fixo - top e bottom</h4>
+    <!-- Fazer algo ficar preso no topo ou no rodapé -->
+    <div id="menu" class="bg-warning text-center h5 fixed-top">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Início |</a></li>
+            <li class="list-inline-item"><a href="#">Sobre |</a></li>
+            <li class="list-inline-item"><a href="#">Trabalhos |</a></li>
+            <li class="list-inline-item"><a href="#">Fale Conosco</a></li>
+        </ul>
+    </div>
+    <!-- <h5 class="fixed-top">Título no TOPO</h5> -->
+    <!-- Fixed-top | Fixed-bottom -->
+
+
+    <!-- Float responsivo - float-<tela>-<direcao>
+            tela: sm, md, lg, xl
+            direção: left, right        
+    -->
+    <h4 class="titulo">Float responsivo - float-&lt;tela&gt;-&lt;direcao&gt;</h4>
+
+
+    <div class="float-sm-right">tela &gt;= 576px</div>
+    <!-- Small -->
+    <div class="float-md-right">tela &gt;= 768px</div>
+    <!-- Medium -->
+    <div class="float-lg-right">tela &gt;= 992px</div>
+    <!-- Large -->
+    <div class="float-xl-right">tela &gt;= 1200px</div>
+    <!-- Extra Large -->
+
+
+    <br><br>
+
+    <p class="text-justify">
+        Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um
+        livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens
+        de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto
+        fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição
+        eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo
+        versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos
+        e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de
+        folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.
+    </p>
+
+    <!-- Colar no topo (Sticky) -->
+    <h4 class="titulo">Colar no topo (Sticky)</h4>
+    <ul class="list-inline sticky-top bg-info" style="height: 105px; padding-top: 80px;">
+        <li class="list-inline-item">Item 1</li>
+        <li class="list-inline-item">Item 2</li>
+        <li class="list-inline-item">Item 3</li>
+    </ul>
+    <!-- Com Stick o ítem é colado no topo assim que ele chega lá. -->
+
+    <p class="text-justify">
+        Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um
+        livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens
+        de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto
+        fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição
+        eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo
+        versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos
+        e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de
+        folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.
+    </p>
+    <p class="text-justify">
+        Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um
+        livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens
+        de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto
+        fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição
+        eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo
+        versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos
+        e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de
+        folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.
+    </p>
+    <p class="text-justify">
+        Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um
+        livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens
+        de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto
+        fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição
+        eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo
+        versões de Lorem Ipsum. Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum tem sido o texto fictício padrão da indústria desde os anos 1500, quando um impressor desconhecido pegou uma cozinha de tipos
+        e embaralhou-a para fazer um livro de espécimes de tipos. Ele sobreviveu não apenas cinco séculos, mas também o salto para a composição eletrônica, permanecendo essencialmente inalterado. Foi popularizado na década de 1960 com o lançamento de
+        folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.
+    </p>
+
+
+
+    <!---------------------------- JS ---------------------------------->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <style src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></style>
+    <style src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></style>
+    <style src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></style>
+
+</body>
+
+</html>
